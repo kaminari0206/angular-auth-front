@@ -1,13 +1,24 @@
 <c-carousel [interval]="0">
+  <h1>sfsfsfs</h1>
     <c-carousel-inner>
-      <c-carousel-item *ngFor="let slide of slides">
+      <!-- <c-carousel-item *ngFor="let slide of slides">
         <img
           [src]="slide.src"
           alt="{{slide.title}}"
           class="block w-100"
           loading="lazy"
         />
+      </c-carousel-item> -->
+      <c-carousel-item *ngIf="slides[0]">
+        <h1>slide1</h1>
       </c-carousel-item>
+      <c-carousel-item *ngIf="slides[1]">
+        <h1>slide2</h1>
+      </c-carousel-item>
+      <c-carousel-item *ngIf="slides[2]">
+        <h1>slide3</h1>
+      </c-carousel-item>
+      
     </c-carousel-inner>
     <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
     <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>

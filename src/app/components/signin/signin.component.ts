@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from './../../shared/auth.service';
 import { Router } from '@angular/router';
 
-import { LogincarouselComponent } from '../logincarousel/logincarousel.component';
-
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',

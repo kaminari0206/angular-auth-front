@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { CarouselModule } from '@coreui/angular';
+import {MatIconModule} from '@angular/material/icon';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './shared/authconfig.interceptor';
 import { LogincarouselComponent } from './components/logincarousel/logincarousel.component';
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +32,10 @@ import { LogincarouselComponent } from './components/logincarousel/logincarousel
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    MatIconModule,
+    MatStepperModule,
+    MatFormFieldModule,
   ],
   providers: [
     {
