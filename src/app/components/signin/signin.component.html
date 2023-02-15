@@ -1,4 +1,8 @@
-<div class="auth-wrapper">
+<div class="bg-slate-300">
+  <div class="max-w-lg min-w-sm w-3/5 bg-white mx-auto">
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
     <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
       <h3 class="h3 mb-3 font-weight-normal text-center">Please sign in</h3>
       <div class="form-group">
@@ -22,4 +26,9 @@
       </div>
       <button type="submit" class="btn btn-block btn-primary">Sign in</button>
     </form>
+    <div class="h-[20px]">
+
+    </div>
+    <app-logincarousel></app-logincarousel>
   </div>
+</div>
