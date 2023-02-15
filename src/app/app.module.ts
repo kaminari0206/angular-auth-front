@@ -13,8 +13,6 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { AuthInterceptor } from './shared/authconfig.interceptor';
 import { LogincarouselComponent } from './components/logincarousel/logincarousel.component';
 
-import {}
-
 @NgModule({
   declarations: [
     AppComponent,
