@@ -1,9 +1,10 @@
 <div class="bg-slate-300 flex items-center justify-center min-h-screen">
 
-  <div class="max-w-lg w-full sm:w-3/5 bg-amber-50 pt-[20px] pb-0 md:pb-[10px] h-fit">
-    <select #langSelect (change)="translate.use(langSelect.value)">
+  <div class="relative max-w-lg w-full sm:w-3/5 bg-amber-50 pt-[20px] pb-0 md:pb-[10px] h-fit">
+    <select #langSelect (change)="translate.use(langSelect.value)" class="absolute top-0 right-[10px] bg-slate-400">
       <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
     </select>
+    <div class="absolute top-[20px] right-[10px] h-[80px] w-[60px] md:h-[160px] md:w-[100px] bg-slate-400"></div>
 
     <div class="h-[40px] bg-amber-50 md:h-[80px]">
      </div>
@@ -26,18 +27,18 @@
                     <div class="relative bg-amber-50">
                        <span class="absolute inset-y-0 left-0">
                           <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                             <mat-icon class="items-center text-3xl !w-full !h-full">account_circle</mat-icon>
+                             <mat-icon class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
                           </button>
                        </span>
                        <input matInput formControlName="emailCtrl" (ngModelChange)="emailChange($event)" type="email"
                           name="q"
-                          class="text-center py-2 w-full text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
+                          class="text-center py-2 w-full text-md md:text-xl md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
                           placeholder="email" autocomplete="off" [email]="true">
                        <span *ngIf="emailError1Show">{{ 'login.emailError1' | translate }}</span>
                        <span *ngIf="emailError2Show">{{ 'login.emailError1' | translate }}</span>
                        <div class="pt-[10px] text-right">
                           <button type="button" disabled mat-button matStepperNext id="emailbutton"
-                             class="email-input bg-orange-500 border-orange-500 rounded-none text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
+                             class="email-input bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
                        </div>
                     </div>
                  </form>
@@ -48,19 +49,19 @@
                     <div class="relative bg-amber-50">
                        <span class="absolute inset-y-0 left-0">
                           <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                             <mat-icon class="items-center text-3xl !w-full !h-full">account_circle</mat-icon>
+                             <mat-icon class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
                           </button>
                        </span>
                        <input matInput formControlName="passwordCtrl" (ngModelChange)="passwordChange($event)"
                           type="password" name="q"
-                          class="text-center py-2 w-full text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
+                          class="text-center py-2 w-full text-md md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
                           placeholder="password" autocomplete="off" required>
                        <span *ngIf="passwordErrorShow">{{ 'login.passwordError' | translate }}</span>
                        <div class="pt-[10px] flex justify-between">
                           <button mat-button matStepperPrevious
-                             class="bg-orange-500 border-orange-500 rounded-none text-xl text-amber-50 px-6 py-1 focus:outline-none ">Back</button>
+                             class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-6 py-1 focus:outline-none ">Back</button>
                           <button disabled mat-button matStepperNext id="passwordbutton"
-                             class="bg-orange-500 border-orange-500 rounded-none text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
+                             class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xltext-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
                        </div>
                     </div>
                  </form>
@@ -71,19 +72,19 @@
                     <div class="relative bg-amber-50">
                        <span class="absolute inset-y-0 left-0">
                           <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                             <mat-icon class="items-center text-3xl !w-full !h-full">account_circle</mat-icon>
+                             <mat-icon class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
                           </button>
                        </span>
                        <input matInput formControlName="locationCtrl" (ngModelChange)="locationChange($event)"
                           type="text" name="q"
-                          class="text-center py-2 w-full text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
+                          class="text-center py-2 w-full text-md md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
                           placeholder="location" autocomplete="off" required>
                        <span *ngIf="locationErrorShow">{{ 'login.locationError' | translate }}</span>
                        <div class="pt-[10px] flex justify-between	">
                           <button mat-button matStepperPrevious
-                             class="bg-orange-500 border-orange-500 rounded-none text-xl text-amber-50 px-6 py-1 focus:outline-none ">Back</button>
+                             class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-6 py-1 focus:outline-none ">Back</button>
                           <button disabled mat-button matStepperNext id="locationbutton"
-                             class="bg-orange-500 border-orange-500 rounded-none text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
+                             class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
                        </div>
                     </div>
                  </form>
