@@ -60,11 +60,18 @@ export class SigninComponent implements AfterContentChecked {
     console.log(event);
     this.authService.validateEmail(event).subscribe((res) => {
       console.log(res)
-      if (res.result) {
+      if (res.result = 'ok') {
         this.emailError1Show = false;
+        this.emailError2Show = false;
         (<HTMLInputElement> document.getElementById("emailbutton")).disabled = false;
       } else {
-        this.emailError1Show = true;
+        if (res.result = 'incorrect') {
+          this.emailError1Show = true;
+          this.emailError2Show = false;
+        } else {
+          this.emailError2Show = true;
+          this.emailError1Show = false;
+        }
       }
     });
   }

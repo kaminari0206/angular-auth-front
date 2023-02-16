@@ -10,14 +10,4 @@ export class AppComponent {
   logout() {
     this.authService.doLogout()
   }
-
-  // name: string = 'John';
-  // count: number = 5;
-  // gender: string = 'male';
-  // amount: number = 7.5;
-  // currentDate: number = Date.now();
-
-  // company: string = 'Localizely';
-  // footerMessage: string = $localize`:Component argument message example@@message.component-argument:Made with ❤️ by ${this.company}`;
-
 }

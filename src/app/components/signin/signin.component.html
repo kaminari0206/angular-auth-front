@@ -1,100 +1,105 @@
 <div class="bg-slate-300 flex items-center justify-center min-h-screen">
 
-  <div class="relative max-w-lg w-full sm:w-3/5 bg-amber-50 pt-[20px] pb-0 md:pb-[10px] h-fit">
-    <select #langSelect (change)="translate.use(langSelect.value)" class="absolute top-0 right-[10px] bg-slate-400">
-      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-    </select>
-    <div class="absolute top-[20px] right-[10px] h-[80px] w-[60px] md:h-[160px] md:w-[100px] bg-slate-400"></div>
+   <div class="relative max-w-lg w-full sm:w-3/5 bg-amber-50 pt-[20px] pb-0 md:pb-[10px] h-fit">
+      <select #langSelect (change)="translate.use(langSelect.value)" class="absolute top-0 right-[10px] bg-slate-400">
+         <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{
+            lang }}</option>
+      </select>
+      <div class="absolute top-[20px] right-[10px] h-[80px] w-[60px] md:h-[160px] md:w-[100px] bg-slate-400"></div>
 
-    <div class="h-[40px] bg-amber-50 md:h-[80px]">
-     </div>
-     
-     <div class="h-2.5 bg-orange-500">
-     </div>
-     <div class="bg-amber-50">
-      <div class="w-fit mx-auto pt-[40px] pb-[20px] md:pt-[80px]">
-         <span class="text-2xl font-thin">Welcome to </span>
-         <span
-            class="text-2xl font-thin bg-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="h-[40px] bg-amber-50 md:h-[80px]">
       </div>
 
-      <div class="w-4/5 mx-auto">
-         <h1 class="text-4xl md:text-5xl text-orange-500 pb-[20px] md:pb-[40px]">Login</h1>
+      <div class="h-2.5 bg-orange-500">
+      </div>
+      <div class="bg-amber-50">
+         <div class="w-fit mx-auto pt-[40px] pb-[20px] md:pt-[80px]">
+            <span class="text-2xl font-thin">Welcome to </span>
+            <span class="text-2xl font-thin bg-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+         </div>
 
-     <mat-horizontal-stepper [linear]="isLinear" #stepper>
-        <mat-step [stepControl]="emailFormGroup">
-                 <form [formGroup]="emailFormGroup">
-                    <div class="relative bg-amber-50">
-                       <span class="absolute inset-y-0 left-0">
-                          <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                             <mat-icon class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
-                          </button>
-                       </span>
-                       <input matInput formControlName="emailCtrl" (ngModelChange)="emailChange($event)" type="email"
-                          name="q"
-                          class="text-center py-2 w-full text-md md:text-xl md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
-                          placeholder="email" autocomplete="off" [email]="true">
-                       <span *ngIf="emailError1Show">{{ 'login.emailError1' | translate }}</span>
-                       <span *ngIf="emailError2Show">{{ 'login.emailError1' | translate }}</span>
-                       <div class="pt-[10px] text-right">
-                          <button type="button" disabled mat-button matStepperNext id="emailbutton"
-                             class="email-input bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
-                       </div>
-                    </div>
-                 </form>
-        </mat-step>
+         <div class="w-4/5 mx-auto">
+            <h1 class="text-4xl md:text-5xl text-orange-500 pb-[20px] md:pb-[40px]">Login</h1>
 
-        <mat-step [stepControl]="passwordFormGroup" label="Fill out your address">
-                 <form [formGroup]="passwordFormGroup">
-                    <div class="relative bg-amber-50">
-                       <span class="absolute inset-y-0 left-0">
-                          <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                             <mat-icon class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
-                          </button>
-                       </span>
-                       <input matInput formControlName="passwordCtrl" (ngModelChange)="passwordChange($event)"
-                          type="password" name="q"
-                          class="text-center py-2 w-full text-md md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
-                          placeholder="password" autocomplete="off" required>
-                       <span *ngIf="passwordErrorShow">{{ 'login.passwordError' | translate }}</span>
-                       <div class="pt-[10px] flex justify-between">
-                          <button mat-button matStepperPrevious
-                             class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-6 py-1 focus:outline-none ">Back</button>
-                          <button disabled mat-button matStepperNext id="passwordbutton"
-                             class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xltext-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
-                       </div>
-                    </div>
-                 </form>
-        </mat-step>
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+               <mat-step [stepControl]="emailFormGroup">
+                  <form [formGroup]="emailFormGroup">
+                     <div class="relative bg-amber-50">
+                        <span class="absolute inset-y-0 left-0">
+                           <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+                              <mat-icon
+                                 class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
+                           </button>
+                        </span>
+                        <input matInput formControlName="emailCtrl" (ngModelChange)="emailChange($event)" type="email"
+                           name="q"
+                           class="text-center py-2 w-full text-md md:text-xl md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
+                           placeholder="email" autocomplete="off" [email]="true">
+                        <span *ngIf="emailError1Show">{{ 'login.emailError1' | translate }}</span>
+                        <span *ngIf="emailError2Show">{{ 'login.emailError1' | translate }}</span>
+                        <div class="pt-[10px] text-right">
+                           <button type="button" disabled mat-button matStepperNext id="emailbutton"
+                              class="email-input bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
+                        </div>
+                     </div>
+                  </form>
+               </mat-step>
 
-        <mat-step [stepControl]="locationFormGroup" label="Fill out your address">
-                 <form [formGroup]="locationFormGroup">
-                    <div class="relative bg-amber-50">
-                       <span class="absolute inset-y-0 left-0">
-                          <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                             <mat-icon class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
-                          </button>
-                       </span>
-                       <input matInput formControlName="locationCtrl" (ngModelChange)="locationChange($event)"
-                          type="text" name="q"
-                          class="text-center py-2 w-full text-md md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
-                          placeholder="location" autocomplete="off" required>
-                       <span *ngIf="locationErrorShow">{{ 'login.locationError' | translate }}</span>
-                       <div class="pt-[10px] flex justify-between	">
-                          <button mat-button matStepperPrevious
-                             class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-6 py-1 focus:outline-none ">Back</button>
-                          <button disabled mat-button matStepperNext id="locationbutton"
-                             class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
-                       </div>
-                    </div>
-                 </form>
-        </mat-step>
-        <mat-step>
-           <ng-template matStepLabel>Done</ng-template>
-           <p>Login success</p>
-           <div>
-           </div>
-        </mat-step>
-     </mat-horizontal-stepper>
-  </div>
+               <mat-step [stepControl]="passwordFormGroup" label="Fill out your address">
+                  <form [formGroup]="passwordFormGroup">
+                     <div class="relative bg-amber-50">
+                        <span class="absolute inset-y-0 left-0">
+                           <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+                              <mat-icon
+                                 class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
+                           </button>
+                        </span>
+                        <input matInput formControlName="passwordCtrl" (ngModelChange)="passwordChange($event)"
+                           type="password" name="q"
+                           class="text-center py-2 w-full text-md md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
+                           placeholder="password" autocomplete="off" required>
+                        <span *ngIf="passwordErrorShow">{{ 'login.passwordError' | translate }}</span>
+                        <div class="pt-[10px] flex justify-between">
+                           <button mat-button matStepperPrevious
+                              class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-6 py-1 focus:outline-none ">Back</button>
+                           <button disabled mat-button matStepperNext id="passwordbutton"
+                              class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xltext-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
+                        </div>
+                     </div>
+                  </form>
+               </mat-step>
+
+               <mat-step [stepControl]="locationFormGroup" label="Fill out your address">
+                  <form [formGroup]="locationFormGroup">
+                     <div class="relative bg-amber-50">
+                        <span class="absolute inset-y-0 left-0">
+                           <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+                              <mat-icon
+                                 class="items-center text-2xl md:text-3xl !w-full !h-full">account_circle</mat-icon>
+                           </button>
+                        </span>
+                        <input matInput formControlName="locationCtrl" (ngModelChange)="locationChange($event)"
+                           type="text" name="q"
+                           class="text-center py-2 w-full text-md md:text-xl bg-amber-50 rounded-md border-b border-orange-500 rounded-none focus:outline-none focus:bg-white"
+                           placeholder="location" autocomplete="off" required>
+                        <span *ngIf="locationErrorShow">{{ 'login.locationError' | translate }}</span>
+                        <div class="pt-[10px] flex justify-between	">
+                           <button mat-button matStepperPrevious
+                              class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-6 py-1 focus:outline-none ">Back</button>
+                           <button disabled mat-button matStepperNext id="locationbutton"
+                              class="bg-orange-500 border-orange-500 rounded-none text-md md:text-xl text-amber-50 px-2 py-1 focus:outline-none ">Continue</button>
+                        </div>
+                     </div>
+                  </form>
+               </mat-step>
+               <mat-step>
+                  <ng-template matStepLabel>Done</ng-template>
+                  <p>Login success</p>
+                  <div>
+                  </div>
+               </mat-step>
+            </mat-horizontal-stepper>
+         </div>
+      </div>
+   </div>
 </div>
