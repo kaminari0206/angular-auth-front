@@ -1,0 +1,9 @@
+
+{
+    "login": {
+      "emailError1": "El usuario no se puede encontrar si el usuario no existe",
+      "emailError2": "El usuario está deshabilitado",
+      "passwordError": "La contraseña es incorrecta",
+      "locationError": "El usuario no tiene ninguna ubicación asignada"
+    }
+}

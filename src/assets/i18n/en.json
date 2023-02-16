@@ -1,0 +1,9 @@
+
+{
+  "login": {
+    "emailError1": "User cannot be found if user does not exist",
+    "emailError2": "User is disabled",
+    "passwordError": "Password is incorrect",
+    "locationError": "User does not have any assigned location"
+  }
+}

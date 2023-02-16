@@ -16,6 +16,21 @@ export class AuthService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
   constructor(private http: HttpClient, public router: Router) {}
+  validateEmail(email: Observable<any>): Observable<any>{
+    let api = `${this.endpoint}/validate-email`;
+    return this.http.post(api, {email: email}).pipe(catchError(this.handleError)); 
+    // return api;
+  }
+  validatePassword(password: Observable<any>): Observable<any>{
+    let api = `${this.endpoint}/validate-password`;
+    return this.http.post(api, {password: password}).pipe(catchError(this.handleError)); 
+    // return api;
+  }
+  validateLocation(location: Observable<any>): Observable<any>{
+    let api = `${this.endpoint}/validate-location`;
+    return this.http.post(api, {location: location}).pipe(catchError(this.handleError)); 
+    // return api;
+  }
   // Sign-up
   signUp(user: User): Observable<any> {
     let api = `${this.endpoint}/register-user`;
