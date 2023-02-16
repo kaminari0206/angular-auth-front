@@ -57,10 +57,9 @@ export class SigninComponent implements AfterContentChecked {
   passwordErrorShow = false;
   locationErrorShow = false;
   emailChange(event: Observable<any>) {
-    console.log(event);
     this.authService.validateEmail(event).subscribe((res) => {
       console.log(res)
-      if (res.result = 'ok') {
+      if (res.result == 'ok') {
         this.emailError1Show = false;
         this.emailError2Show = false;
         (<HTMLInputElement> document.getElementById("emailbutton")).disabled = false;
@@ -68,9 +67,11 @@ export class SigninComponent implements AfterContentChecked {
         if (res.result = 'incorrect') {
           this.emailError1Show = true;
           this.emailError2Show = false;
+          (<HTMLInputElement> document.getElementById("emailbutton")).disabled = true;
         } else {
           this.emailError2Show = true;
           this.emailError1Show = false;
+          (<HTMLInputElement> document.getElementById("emailbutton")).disabled = true;
         }
       }
     });
@@ -84,6 +85,7 @@ export class SigninComponent implements AfterContentChecked {
         (<HTMLInputElement> document.getElementById("passwordbutton")).disabled = false;
       } else {
         this.passwordErrorShow = true;
+        (<HTMLInputElement> document.getElementById("passwordbutton")).disabled = true;
       }
     });
   }
@@ -96,6 +98,7 @@ export class SigninComponent implements AfterContentChecked {
         (<HTMLInputElement> document.getElementById("locationbutton")).disabled = false;
       } else {
         this.locationErrorShow = true;
+        (<HTMLInputElement> document.getElementById("locationbutton")).disabled = true;
       }
     });
   }
